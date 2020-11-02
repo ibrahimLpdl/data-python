@@ -1,0 +1,16 @@
+# Sample Dockerfile
+
+# Use the images UBUNTU already install in docker
+FROM ubuntu
+
+# COPY all data in de current folder
+COPY . /
+
+# Install all dependance for my container 
+RUN apt-get install python &&\
+	apt-get install pip3 &&\
+	apt-get install vim &&\
+
+RUN python3 -m pip install -r requirements.txt
+	
+EXPOSE 8000
